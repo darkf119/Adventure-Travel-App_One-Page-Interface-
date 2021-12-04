@@ -1,0 +1,58 @@
+// Bootstrap SM
+@mixin screen_sm() {
+    @media only screen and (min-width: 576px){
+        @content;
+    }
+}
+
+// Bootstrap MD
+@mixin screen_md() {
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+// Bootstrap LG
+@mixin screen_lg() {
+    @media only screen and (min-width: 992px){
+        @content;
+    }
+}
+
+// Bootstrap XL
+@mixin screen_xl() {
+    @media only screen and (min-width: 1200px){
+        @content;
+    }
+}
+
+// Bootstrap XXL
+@mixin screen_xxl() {
+    @media only screen and (min-width: 1320px) {
+        @content;
+    }
+}
+
+// Variable
+@mixin screen_btw($minWidth, $maxWidth) {
+    @media only screen and (min-width: $minWidth)
+    and (max-width: $maxWidth) {
+        @content;
+    }
+}
+
+// From here and up
+@mixin screen_up_from($minWidth) {
+    @media only screen and (min-width: $minWidth) {
+        @content;
+    }
+}
+
+// Bootstrap SASS
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px,
+//   xxl: 1320px
+// );

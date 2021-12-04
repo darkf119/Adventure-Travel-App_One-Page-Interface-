@@ -1,0 +1,1193 @@
+// Imports
+@import "./responsive_mixin";
+@import "./colors";
+@import "./fonts";
+@import "./functions";
+@import "./variables";
+@import "./components";
+
+// Globals -----------------------
+
+body {
+    font-family: $primary_font_family;
+    font-weight: 400;
+    font-size: 14px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: $primary_dark;
+    background-color: $light_bg;
+    //overflow-x: hidden;
+}
+
+ul {
+    list-style-type: none !important;
+    padding: 0px !important;
+    margin: 0px;
+}
+
+h2 {
+    &.section-header {
+        font-weight: 700;
+        font-size: 35px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary_dark;
+    &:focus, &:hover {
+        color: $primary_blue;
+    }
+}
+    
+.container {
+    padding: 0px;
+}
+
+.img-container {
+    overflow: hidden;
+    width: 100%;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.btn {
+    &.see-all{
+        width: 102px;
+        height: 36px;
+        margin-left: 12px;
+        background-color: $selection_bg;
+        font-weight: 700;
+        font-size: 14px;
+        color: $primary_blue;
+        text-transform: uppercase;
+        padding: 0;
+        border: none;
+        &:focus {
+            border-color: $primary_blue;
+        }
+    }
+    &:hover:not(label) {
+        background-color: $orange_highlight !important;
+        color: $primary_white;
+    }
+}
+
+$theme_width: 1332px;
+
+// Header ------------------------
+
+header {
+    nav {
+        
+        background-color: $light_bg;
+        height: 88px;
+
+        .container {
+            max-width: $theme_width;
+            display: flex;
+            position: relative;
+            .logo {
+                height: 60px;
+                width: auto;
+            }
+            button.navbar-toggler{
+                margin-right: 10px;
+                .navbar-toggler-icon{
+                    background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="black" fill-opacity="0.86"></path></svg>');
+                }
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+                &:hover{
+                    & .navbar-toggler-icon{
+                        background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="#{$svg_primary_blue}" fill-opacity="0.86"></path></svg>');
+                    }
+                }
+            }
+            button.btn-close{
+                background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40px 40px;
+                margin-top: 13px;
+                margin-right: 8px;
+            }
+            // Offcanvas Navigation ----------
+            .offcanvas-body{
+                @include screen_btw (0px, 992px){
+                    
+                    padding-left: 30px;
+                }
+                display: flex;
+                flex-direction: column;
+                @include screen_lg{
+                    height: 100%;
+                    flex-direction: row;
+                    align-items: end;
+                }
+            }
+            .offcanvas-title {
+                color: $primary_dark;
+            }
+            .navbar-nav{
+                order: 2;
+                flex-direction: column;
+                margin-top: 25px;
+                @include screen_lg { 
+                    order: 1;
+                    margin-left: 18px;
+                    flex-direction: row;
+                    align-self: center;
+                }
+            }
+            .nav-item{
+                
+                margin-top: 17px;
+                
+            }
+            .nav-link{
+                
+                font-weight: 500;
+                color: $primary_dark;
+                font-size: 16px;
+                &:hover{
+                    font-weight: 700;
+                    color: $primary_dark;
+                }
+                &.active{
+                    font-weight: 700;
+                    color: $primary_blue;
+                }
+                &.dropdown-toggle{
+                    font-size: 14px;
+                    color: $primary_gray;
+                    position: absolute;
+                    content: "";
+                    top: 4px;
+                    left: 0;
+                    @include option-btn;
+                    &::after{
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .login-btn {
+                @include screen_btw(0px, 992px){
+                    color: $primary_blue;
+                    background-color: $lightblue_bg;
+                    border-radius: 0px;
+                    width: 353px+30px+16px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-top: 0px;
+                    position: relative;
+                    font-weight: 700;
+                    font-size: 14px;
+                    left: -30px;
+                    right: -400px;
+                    &:hover{
+                        color: $primary_white;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    margin-left: 20px;
+                    margin-right: auto;
+                }
+                order: 1;
+                margin-top: 40px;
+                color: $primary_white;
+                font-weight: 700;
+                font-size: 14px;
+                height: 36px;
+                margin-right: 0px !important;
+                text-transform: uppercase;
+                background-color: $primary_blue;
+                border: none;
+                width: 115px;
+                height: 36px;
+                @include screen_lg{
+                    order: 2;
+                    align-self: center;
+                }
+            }
+            .language-selection, .currency-selection{
+                
+                h6 {
+                    font-weight: 600;
+                    font-size: 12px;
+                }
+                .dropdown{
+                    background-color: $selection_bg !important;
+                    padding: 10px 16px;
+                    margin-top: 1px;
+                    border-radius: 7px;
+                    height: 36px;
+                    .dropdown-menu {
+                        padding: 16px 0;
+                        .dropdown-item {
+                            font-size: 14px;
+                            &:active, &:hover{
+                                background-color: $primary_blue;
+                                color: $primary_white;
+                            }
+                        }
+                    }
+                }
+                @include screen_lg{
+                    margin-left: 27px;
+                    align-self: center;
+                }
+            }
+            .currency-selection {
+                order: 3;
+                margin-top: 27px;
+                .dropdown{
+                    width: 87px;
+                }
+            }
+            .language-selection {
+                order: 4;
+                margin-top: 30px;
+                .dropdown{
+                    width: 165px;
+                    .flag-icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @include screen_lg{
+        height: 100px;
+    }
+}
+
+// Main --------------------------
+
+main {
+    width: 100%;
+}
+
+//// Hero Content ----------------
+
+.hero-content {
+    @include screen_btw( 0px, 724px){
+            
+        max-height: 676px;
+        width: 100vw;
+        margin-top: 0px;
+        
+    }
+    position: relative;
+    height: 703px;
+    margin-top: 15px;
+    //max-width: $theme_width;
+    .search-form-box{
+        
+        @include screen_btw( 0px, 724px){
+            
+            position: absolute;
+            background-color: green;
+            width: 100%;
+            height: 100%;
+            margin-top: 0px;
+        }
+        margin-top: 56px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 593px;
+        height: 590px;
+        background-color: transparent;
+        [role="tablist"] {
+            @include screen_btw( 0px, 724px){
+            
+                height: 48px;
+                width: 100vw;
+                
+            }
+            position: relative;
+            height: 48px;
+            border-bottom: 0;
+            [role="tab"] {
+                @include screen_btw( 0px, 724px){
+            
+                    border-radius: 0px;
+                    padding: 0;
+                    height: 100%;
+                    &.active{
+                        border-bottom: 3px solid $primary_blue;
+                    }
+                    &.active, &:not(.active){
+                        width: 50vw !important;
+                    }
+                    
+                }
+                position: absolute;
+                content: "";
+                bottom: 0;
+                border: none;
+                width: 267px;
+                height: 48px;
+                border-radius: 15px 15px 0px 0px;
+                background-color: $selection_bg;
+                padding: 0;
+                color: $primary_dark;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // First Tab
+                &:first-child{
+                    @include screen_btw( 0px, 724px){
+            
+                        top: 0px;
+                        &:not(.active){
+                            padding: 0px !important;
+                        }
+                        
+                    }
+                    left: 0px;
+                    
+                    &.active {
+                        padding: auto 45px;
+                    }
+                    &:not(.active){
+                        padding-left: auto;
+                        padding-right: 110px;
+                        .flights-icon{
+                            display: none;
+                        }
+                    }
+                }
+                // All other tabs or Default
+                &:not(:first-child){
+                    @include screen_btw( 0px, 724px){
+            
+                        top: 0px;
+                        right: 0px;
+                        left: 50vw;
+                        &:not(.active){
+                            padding: 0 !important;
+                        }
+                        &.active{
+                            left: 50vw !important;
+                        }
+                    }
+                    left: 82px;
+                    &.active{
+                        left: 147px;
+                    }
+                    &:not(.active){
+                        padding-left: 114px;
+                        padding-right: auto;
+                        .hotels-icon{
+                            display: none;
+                        }
+                    }
+                }
+                &.active {
+                    @include screen_btw( 0px, 724px){
+            
+                        height: 48px;
+                    }
+                    height: 60px;
+                    width: 202px;
+                    padding: 0 auto;
+                    background-color: $light_bg;
+                    z-index: 600;
+                    color: $primary_blue;
+                    .flights-icon{
+                        &::before{
+                            content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none"><path d="M19 14V12L11 7V1.5C11 0.67 10.33 0 9.5 0C8.67 0 8 0.67 8 1.5V7L0 12V14L8 11.5V17L6 18.5V20L9.5 19L13 20V18.5L11 17V11.5L19 14Z" fill="#{$svg_primary_blue}"/></svg>');
+                        }
+                    }
+                    .hotels-icon{
+                        &::before{
+                            content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15" fill="none"><path d="M6 8C7.66 8 9 6.66 9 5C9 3.34 7.66 2 6 2C4.34 2 3 3.34 3 5C3 6.66 4.34 8 6 8ZM18 2H10V9H2V0H0V15H2V12H20V15H22V6C22 3.79 20.21 2 18 2Z" fill="#{$svg_primary_blue}"/></svg>');
+                        }
+                    }
+                }
+                div{
+                    height: 20px;
+                    min-width: 20px;
+                    position: relative;
+                    &.flights-icon{
+                        margin-bottom: 2px;
+                        margin-right: 11px;
+                        &::before{
+                            content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none"><path d="M19 14V12L11 7V1.5C11 0.67 10.33 0 9.5 0C8.67 0 8 0.67 8 1.5V7L0 12V14L8 11.5V17L6 18.5V20L9.5 19L13 20V18.5L11 17V11.5L19 14Z" fill="#{$svg_primary_dark}"/></svg>');
+                        }
+                    }
+                    &.hotels-icon{
+                        margin-top: 4px;
+                        margin-right: 13px;
+                        &::before{
+                            content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="15" viewBox="0 0 22 15" fill="none"><path d="M6 8C7.66 8 9 6.66 9 5C9 3.34 7.66 2 6 2C4.34 2 3 3.34 3 5C3 6.66 4.34 8 6 8ZM18 2H10V9H2V0H0V15H2V12H20V15H22V6C22 3.79 20.21 2 18 2Z" fill="#{$svg_primary_dark}"/></svg>');
+                        }
+                    }
+                    &::before{
+                        position: absolute;
+                        height: 20px;
+                        width: auto;
+                        fill: $primary_dark;
+                    }
+                }
+                h3{
+                    font-weight: 700;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .tab-content{
+            @include screen_btw( 0px, 724px){
+            
+                max-height: 630px;
+                border-radius: 0;
+                
+            }
+            background-color: $light_bg;
+            border-radius: 0px 15px 15px 15px;
+            #nav-flights{
+                @include screen_btw( 0px, 724px){
+            
+                    min-height: 628px;
+                }
+                height: 477px;
+                
+                .form-item{
+                    @include screen_btw( 0px, 724px){
+            
+                        max-width: 280px;
+                        margin: 0 auto;
+                        
+                    }
+                    margin-right: 44px;
+                  
+                    
+                    width: 470px;
+                    input{
+                        &:not([type="checkbox"]){
+                            height: 48px;
+                        }
+                        &[type="checkbox"]{
+                            width: 19px;
+                            height: 19px;
+                        }
+                    }
+
+                    [aria-label="select-ticket-type"]{
+                        @include screen_btw( 0px, 724px){
+                
+                            width: 274px;
+                             
+                        }
+                        width: 470px;
+                        height: 36px;
+                        label{
+                            font-weight: 600;
+                            font-size: 14px;
+                            outline: none;
+                            color: $primary_blue;
+                            
+                            &[for="roundTrip"]{
+                                border-left: 1px solid $primary_blue;
+                                border-top: 1px solid $primary_blue;
+                                border-bottom: 1px solid $primary_blue;
+                                border-right: 0.5px solid $primary_blue;
+                            }
+                            &[for="oneWay"]{
+                                border-left: 0.5px solid $primary_blue;
+                                border-top: 1px solid $primary_blue;
+                                border-bottom: 1px solid $primary_blue;
+                                border-right: 1px solid $primary_blue;
+                            }
+                            
+                            &[is-checked="true"]{
+                                background-color: $lightblue_bg;
+                                color: $primary_dark;
+                            }
+                            
+                        }
+                    }
+                    &:first-child{
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 31px;
+                             
+                        }
+                        margin-top: 20px;
+                        height: 36px;
+                    }
+                    &:nth-child(2){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 24px;
+                             
+                        }
+                        margin-top: 16px;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            display: block;
+                            content: "";
+                            height: 24px;
+                            width: 24px;
+                            background-image: url("../img/icons/plane_departure.svg");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            top: 0.8em;
+                            left: -2.7em;
+                        }
+                    }
+                    &:nth-child(3){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 12px;
+                             
+                         }
+                        margin-top: 10px;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            display: block;
+                            content: "";
+                            height: 24px;
+                            width: 24px;
+                            background-image: url("../img/icons/plane_arrival.svg");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            top: 0.8em;
+                            left: -2.7em;
+                        }
+                    }
+                    &:nth-child(4){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 12px;
+                             
+                         }
+                        margin-top: 10px;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            display: block;
+                            content: "";
+                            height: 24px;
+                            width: 24px;
+                            background-image: url("../img/icons/calendar.svg");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            top: 0.8em;
+                            left: -2.7em;
+                        }
+                    }
+                    &:nth-child(5){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 30px;
+                            flex-direction: column;
+
+                            .select-class{
+                                
+                                margin-top: 22px;
+                                
+                            }
+                            .dropdown, #selectClass{
+                                width: 280px !important;
+                            }
+
+                            .dropdown-toggle{
+                                &::after{
+                                    margin-left: 152px !important;
+                                }
+                            }
+                            ul{
+                                width: 280px !important;
+                            }
+                             
+                         }
+                        font-size: 16px;
+                        font-weight: 400;
+                        margin-top: 19px;
+                        label{
+                            font-weight: 600;
+                            font-size: 13px;
+                        }
+                        button{
+                            
+                            @include option-btn;
+                            background-size: 20px 10px;
+                            
+                        }
+                        .dropdown{
+                            width: 230px;
+                            height: 48px;
+                            .nav-link{
+                                height: 100%;
+                                top: 4px;
+                                font-size: 16px;
+                                font-weight: 400;
+                                &.dropdown-toggle{
+                                    font-size: 14px;
+                                    color: $primary_gray;
+                                    position: absolute;
+                                    content: "";
+                                    top: 5px;
+                                    left: 0;
+                                    @include option-btn;
+                                    
+                                    &::after{
+                                        margin-left: 100px;
+                                       
+                                    }
+                                }
+                            }
+                            .dropdown-menu {
+                                width: 240px;
+                                padding: 0 30px;
+                                left: 30px;
+    
+                                @include stepper_input;
+                                .stepper-input{
+                                    width: 228px;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    align-items: center;
+                                    
+                                    .btn{
+                                        width: 36px;
+                                        height: 36px;
+                                    }
+                                    .input-box{
+                                        flex-grow: 1;
+                                        width: 140px;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        select{
+                            width: 230px;
+                            height: 48px;
+                            background-image: url('../img/icons/arrow_down.svg');
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    &:nth-child(6){
+                        @include screen_btw( 0px, 724px){
+                            
+                            margin-top: 34px;
+                            width: 222px;
+                             
+                         }
+                        margin-top: 35px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        height: 48px;
+                        width: 222px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        background-color: $primary_blue;
+                        color: $primary_white;
+                    }
+                    &:nth-child(7){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 21px;
+                             
+                         }
+                        margin-top: 21px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        .form-check-input{
+                            margin-right: 8px;
+                            margin-top: -2px;
+                            background-color: $primary_white;
+                            &:checked{
+                                background-image: url('../img/icons/checkmark.svg');
+                                border-color: $primary_blue;
+                            }
+                        }
+                        .form-check-label{
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            #nav-hotels{
+                @include screen_btw( 0px, 724px){
+                
+                    min-height: 628px;
+                     
+                }
+                form{
+                    align-items: flex-end;
+                }
+                height: 428px;
+                .form-item{
+                    @include screen_btw( 0px, 724px){
+                        width: auto;
+                        margin: 0 auto !important;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    &:not(.input-tenant-info){
+                        margin-right: 44px;
+                    }
+                    
+                    width: 470px;
+                    input{
+                        @include screen_btw( 0px, 724px){
+                
+                            width: 280px;
+                        }
+                    }
+
+                    &:first-child{
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 40px !important;
+                        }
+                        margin-top: 54px;
+                        position: relative;
+                        &::before{
+                            @include screen_btw( 0px, 724px){
+                
+                                top: 0.6em;
+                                 
+                            }
+                            position: absolute;
+                            display: block;
+                            content: "";
+                            height: 24px;
+                            width: 24px;
+                            background-image: url("../img/icons/destination_city.svg");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            top: 0.8em;
+                            left: -2.5em;
+                        }
+                    }
+                    &:nth-child(2), &:nth-child(3){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 12px !important;
+                        }
+                        margin-top: 10px;
+                        position: relative;
+                        &::before{
+                            @include screen_btw( 0px, 724px){
+                
+                                top: 0.6em;
+                                 
+                            }
+                            position: absolute;
+                            display: block;
+                            content: "";
+                            height: 24px;
+                            width: 24px;
+                            background-image: url("../img/icons/calendar.svg");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            top: 0.8em;
+                            left: -2.5em;
+                        }
+                    }
+                    &:nth-child(4){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 34px !important;
+                            flex-direction: column;
+                            gap: 40px;
+                            height: auto;
+                            align-items: center;
+                             
+                        }
+                        height: 65px;
+                        display: flex;
+                        @include stepper_input;
+                        gap: 44px;
+                        justify-content: center;
+                        margin: 0 auto;
+                        margin-top: 29px;
+                            label{
+                                margin-bottom: 6px;
+                                font-weight: 500;
+                                font-size: 13px;
+                            }
+                           
+                            .stepper-input{
+                                display: flex;
+                                justify-content: start;
+                                width: 147px;
+                                
+                                .btn{
+                                    width: 49px;
+                                }
+                                .input-box{
+                                    flex-grow: 1;
+                                    width: 49px;
+                                }
+                            }
+                              
+                    }
+                    &:nth-child(5){
+                        @include screen_btw( 0px, 724px){
+                
+                            margin-top: 31px !important;
+                             
+                        }
+                        margin-top: 42px;
+                        height: 48px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        width: 222px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        background-color: $primary_blue;
+                        color: $primary_white;
+                    }
+                }
+            }
+        }
+        
+        @include screen_lg {
+            margin-left: 88px;
+        }
+
+        // @include screen_btw(0, 724){
+        //     width: 80vw;
+        // }
+    }
+    @include screen_sm {
+        background: url("../img/unsplash_rf6ywHVkrlY.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+//// Popular Cities --------------
+.popular-cities {
+    margin-top: 67px;
+    h3 {
+        margin-top: 18px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .carousel-container{
+        margin-top: 6px;
+    }
+    .card {
+        height: 100%;
+        padding: 15px 12px;
+        .card-body{
+            background-color: $primary_white;
+            font-weight: 400;
+            font-size: 15px;
+            height: 93px;
+            h5{
+                font-weight: 600;
+                span {
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+            .prices{
+                color: $orange_highlight;
+                font-size: 18px;
+            }
+            p {
+                font-weight: 500;
+                font-size: 15px;
+                margin-top: 22px;
+                .price{
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: $orange_highlight;
+                    margin-top: 5px;
+                }
+                &.card-text{
+                    margin-top: 15px;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+//// Bestselling Airlines --------
+.bestselling-airlines {
+    margin-top: 145px;
+    .card {
+        height: 100%;
+        position: relative;
+        .card-img-overlay{
+            background-color: $primary_white;
+            font-weight: 700;
+            height: 93px;
+            opacity: 90%;
+            position: absolute;
+            top: 265px;
+            h5{
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .prices{
+                color: $orange_highlight;
+                font-size: 18px;
+            }
+            .route{
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        .img-container{
+            height: 100%;
+        }
+    }
+    .carousel-container {
+        margin-top: 34px;
+    }
+}
+
+//// Travel Tips -----------------
+
+.travel-tips {
+    background-color: $lightgray_bg;
+    margin-top: 97px;
+    min-height: 1024px;
+    padding: 104px 100px 60px 100px;
+
+    .container {
+        h2{
+            @include screen_btw(0px, 1243px){
+                text-align: center;
+            }
+        }
+        &.content-container{
+            max-width: 1074px;
+            #travelTips{
+                margin-top: 56px;
+                @include screen_btw(0px, 1243px){
+                    align-items: center;
+                }
+            }
+            .card {
+                height: 372px;
+                width: 522px;
+                margin-bottom: 30px;
+                position: relative;
+                .card-img-overlay{
+                    background-color: $primary_white;
+                    height: 74px;
+                    opacity: 90%;
+                    position: absolute;
+                    bottom: 0 !important;
+                    h5{
+                        color: $primary_blue;
+                        font-weight: 700;
+                        font-size: 20px;
+                        margin: 0;
+                    }
+                }
+                .img-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    img{
+                        height: 120%;
+                        width: 120%;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//// Mailing List Subscription ---
+.mailinglist-signup-form {
+    height: 220px;
+    background-color: $lightblue_bg;
+    position: relative;
+    overflow: hidden;
+    .container{
+        width: 700px;
+        img {
+            height: 240px;
+            width: auto;
+            position: relative;
+            top: -5px;
+        }
+        form{
+            margin-left: 12px;
+            label{
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 7px;
+            }
+            input{
+                height: 48px;
+                width: 306px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            button{
+                background-color: $primary_blue;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 600;
+                height: 48px;
+                border: none;
+                padding: 16px;
+                margin-left: 10px;
+                width: 113px;
+            }
+        }
+    }
+}
+
+// Footer ------------------------
+
+.siteFooter {
+    @include screen_sm{
+        padding-bottom: 20px;
+    }
+    width: 100vw;
+    height: 360px;
+    margin-top: auto;
+    padding: 33px 40px 12px 40px;
+    background-color: $lightgray_bg;
+    nav {
+        max-width: 840px;
+        margin: 24px 50px 0 50px;
+        .page-list {
+            padding: 0;
+            .list-header{
+                margin-bottom: 20px;
+            }
+            ul {
+                
+                //margin-top: 20px;
+                li{
+                    
+                    &:not(:first-child){
+                        margin-top: 15px;
+                    }
+                    &:not(:last-child){
+                        margin-right: 10px;
+                    }
+                }
+                
+            }
+            text-align: left;
+            h5 {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+        @include screen_md{
+            height: 362px;
+            margin-top: 33px;
+        }
+        @include screen_xl {
+            width: $theme_width - 100px;
+        }
+        @include screen_btw(873px, 1140px){
+            width: 820px;
+        }
+    }
+    .accordion {
+        button.accordion-button{
+            background-color: $lightgray_bg;
+        }
+        ul {
+            li{
+                margin-top: 11px;
+                &:first-child{
+                    margin-top: 16px;
+                }
+            }
+        }
+        @include screen_md {
+            display: none;
+        }
+        .accordion-item{
+            background-color: $lightgray_bg;
+        }
+        .accordion-body{
+            background-color: $light_bg;
+        }
+    }
+    p {
+        
+        background-color: transparent;
+        a{
+            font-weight: 700;
+            font-size: 13px;
+            color: $primary_blue;
+        }
+        &.copyright-statement{
+            
+            margin-top: 25px;
+            span {
+                display: none;
+            }
+            @include screen_sm{
+                margin-top: 67px;
+            }
+            @include screen_md{
+                span {
+                    display: inline-block;
+                }
+            }
+            @include screen_btw(576px, 768px){
+                margin-bottom: 0px;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+// Image Carousels ----------------------
+
+.imageCarousel {
+    background: transparent;
+    overflow: hidden;
+    .carousel-cell {
+        border-radius: 5px;
+    }
+    &#popCity{
+        padding-left: 14px;
+        .carousel-cell {
+            width: 430px;
+            height: 500px;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+    &#bestsellingAirlines{
+        padding-left: 14px;
+        .carousel-cell {
+            width: 405px;
+            height: 360px;
+            &:not(:last-child) {
+                margin-right: 46px;
+            }
+        }
+    }
+}

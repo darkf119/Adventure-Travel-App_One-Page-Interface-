@@ -1,0 +1,9 @@
+$flag-icons-path: '../img/flags' !default;
+$flag-icons-rect-path: '/4x3' !default;
+$flag-icons-square-path: '/1x1' !default;
+
+// SVG Icon Fill Colors ---------------------
+$string_1: '#{$primary_blue}';
+$string_2: '#{$primary_dark}';
+$svg_primary_blue: str-replace($string_1,'#','%23');
+$svg_primary_dark: str-replace($string_2,'#','%23');

@@ -1,0 +1,70 @@
+// Components ---------------------
+
+//// Selection Button ---------------
+@mixin option-btn {
+    
+    &:focus{
+        color: $primary_blue;
+    }
+    &::after{
+        color: $orange_highlight;
+        margin: 0;
+        background-image: url('../img/icons/arrow_down.svg');
+        background-position-x: 50%;
+        background-repeat: no-repeat;
+    }
+    &.active::after{
+        transform: rotate(180deg);
+    }
+            
+}
+
+//// Accordion --------------------
+
+.accordion {
+    .accordion-item{
+        font-size: 14px;
+        .accordion-header{
+            .accordion-button{
+                font-weight: 500;
+                @include option-btn;
+                &::after{
+                    margin-left: 8px;
+                    background-size: 70%;
+                    background-position-y: 64%;
+                }
+                &[aria-expanded="true"]{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+//// Stepper Input ------------------
+@mixin stepper_input {
+   
+    .btn{
+        cursor: pointer;
+        // padding: 1em;
+        color: $primary_gray;
+        background-color: $lightblue_bg;
+        // border: 1px solid #121212;
+    }
+    
+    .btn-left{
+        border-radius: .4rem 0 0 .4rem;
+    }
+
+    .btn-right{
+        border-radius: 0 .4rem .4rem 0;
+    }
+ 
+    .input-box {
+        border: none;
+        text-align: center;
+        
+        font-size: 16px;
+        font-weight: 600 !important;
+    }
+}
