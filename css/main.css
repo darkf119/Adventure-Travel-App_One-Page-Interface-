@@ -678,7 +678,7 @@ main {
 }
 
 .hero-content .search-form-box .tab-content #nav-flights {
-  height: 477px;
+  min-height: 477px;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 724px) {
@@ -1030,7 +1030,7 @@ main {
 }
 
 .hero-content .search-form-box .tab-content #nav-hotels {
-  height: 428px;
+  min-height: 428px;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 724px) {
@@ -1426,10 +1426,9 @@ main {
 }
 
 .mailinglist-signup-form {
-  height: 220px;
+  max-height: 220px;
   background-color: #cdeefc;
   position: relative;
-  overflow: hidden;
 }
 
 .mailinglist-signup-form .container {

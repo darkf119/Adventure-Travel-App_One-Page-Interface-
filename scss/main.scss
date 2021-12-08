@@ -78,8 +78,6 @@ a {
     }
 }
 
-
-
 // Header ------------------------
 
 header {
@@ -487,7 +485,7 @@ main {
             
                     min-height: 628px;
                 }
-                height: 477px;
+                min-height: 477px;
                 
                 .form-item{
                     @include screen_btw( 0px, 724px){
@@ -760,7 +758,7 @@ main {
                 form{
                     align-items: flex-end;
                 }
-                height: 428px;
+                min-height: 428px;
                 .form-item{
                     @include screen_btw( 0px, 724px){
                         width: auto;
@@ -1055,10 +1053,9 @@ main {
 
 //// Mailing List Subscription ---
 .mailinglist-signup-form {
-    height: 220px;
+    max-height: 220px;
     background-color: $lightblue_bg;
     position: relative;
-    overflow: hidden;
     .container{
         width: 700px;
         img {

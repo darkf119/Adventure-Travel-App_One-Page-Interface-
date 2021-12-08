@@ -214,10 +214,16 @@
                 <div class="tab-pane fade" id="nav-hotels" role="tabpanel" aria-labelledby="nav-hotels-tab">
                   <form action="#" class="d-flex flex-column needs-validation" novalidate>
                     <div class="form-item select-city">
-                      <input type="text" class="form-control" id="destinationCity" placeholder="City">
+                      <input type="text" class="form-control" id="destinationCity" placeholder="City" required>
+                      <div class="invalid-feedback">
+                        Please enter the city you will be staying in
+                      </div>
                     </div>
                     <div class="form-item select-date-range">
-                      <input type="text" class="form-control" id="selectDateArrivingHotel" name="selectDateArrivingHotel" placeholder="Arriving">
+                      <input type="text" class="form-control" id="selectDateArrivingHotel" name="selectDateArrivingHotel" placeholder="Arriving" required>
+                      <div class="invalid-feedback">
+                        Please enter the date of arrival
+                      </div>
                     </div>
                     <div class="form-item select-date-range">
                       <input type="text" class="form-control" id="selectDateLeavingHotel" name="selectDateLeavingHotel" placeholder="Leaving">
@@ -227,8 +233,11 @@
                         <label class="form-check-label" for="numRooms">Rooms</label>
                         <div class="stepper-input">
                           <button class="btn btn-left">-</button>
-                          <input type="number" value="0" class="input-box" id="numRooms"/>
+                          <input type="number" value="0" class="input-box" id="numRooms" required/>
                           <button class="btn btn-right">+</button>
+                        </div>
+                        <div class="invalid-feedback">
+                          Please enter a value number
                         </div>
                       </div>
                      
@@ -236,8 +245,11 @@
                         <label class="form-check-label" for="numAdults">Adults</label>
                         <div class="stepper-input">
                           <button class="btn btn-left">-</button>
-                          <input type="number" value="0" class="input-box" id="numAdults"/>
+                          <input type="number" value="0" class="input-box" id="numRooms" required/>
                           <button class="btn btn-right">+</button>
+                        </div>
+                        <div class="invalid-feedback">
+                          Please enter a value number
                         </div>
                       </div>
 
@@ -245,8 +257,11 @@
                         <label class="form-check-label" for="numChildren">Children(-12)</label>
                         <div class="stepper-input">
                           <button class="btn btn-left">-</button>
-                          <input type="number" value="0" class="input-box" id="numChildren"/>
+                          <input type="number" value="0" class="input-box" id="numRooms" required/>
                           <button class="btn btn-right">+</button>
+                        </div>
+                        <div class="invalid-feedback">
+                          Please enter a value number
                         </div>
                       </div>
                     </div>
@@ -293,11 +308,14 @@
             <div class="container row d-flex align-items-center mx-auto">
               <img src="img/icons/plane_subscribe.svg" alt="subscribe to mailing list" class="col-6 p-0">
               
-              <form action="#" class="needs-validation col-6 p-0" novalidate>
+              <form action="#" class="needs-validation email-sub col-6 p-0" novalidate>
                 <label for="subscribeToMailingList" class="form-label">Subscribe to get the latest deals</label>
-                <div class="mb-3 d-flex">
-                  <input type="text" class="form-control" id="subscribeToMailingList" placeholder="Enter Your Email">
+                <div class="d-flex">
+                  <input type="text" class="form-control" id="subscribeToMailingList" placeholder="Enter Your Email" required>
                   <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+                <div class="invalid-feedback">
+                  Please enter a valid email
                 </div>
               </form>
               
