@@ -159,7 +159,7 @@ header nav.navbar .container-fluid {
 
 @media only screen and (min-width: 0px) and (max-width: 1332px) {
   header nav.navbar .container-fluid {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 }
 
@@ -177,7 +177,7 @@ header nav.navbar .logo-container .logo {
 }
 
 header nav.navbar button.navbar-toggler {
-  margin-right: 10px;
+  padding: 0;
 }
 
 header nav.navbar button.navbar-toggler .navbar-toggler-icon {
@@ -383,6 +383,12 @@ header nav.navbar .login-btn {
   header nav.navbar .login-btn:hover {
     color: #fff;
   }
+}
+
+header nav.navbar .login-btn:hover {
+  border: 2px solid #009AD8 !important;
+  background-color: #fff !important;
+  color: #009AD8 !important;
 }
 
 header nav.navbar .login-btn span {
