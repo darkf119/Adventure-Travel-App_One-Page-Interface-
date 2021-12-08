@@ -1660,4 +1660,38 @@ main {
 .imageCarousel#bestsellingAirlines .carousel-cell:not(:last-child) {
   margin-right: 46px;
 }
+
+/* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  z-index: 350;
+  margin-top: 140px;
+  border: none;
+}
+
+.flickity-prev-next-button.next {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-left: 1202px;
+}
+
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */

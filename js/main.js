@@ -430,7 +430,7 @@ function enableDraggableCarousel(){
             Enable if items have percent widths
             Disable if items have pixel widths, like images */
         
-            prevNextButtons: false,
+            prevNextButtons: true,
             /* creates and enables buttons to click to previous & next cells */
         
             pageDots: false,
