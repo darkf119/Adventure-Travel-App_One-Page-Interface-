@@ -241,7 +241,7 @@ function enableStepperInput(){
 // Restrict section div width
 function sectionWidthWrapper(){
     var widthWrapper = '1332px';
-    var sectionDivList = document.querySelectorAll('section.container, .siteFooter nav');
+    var sectionDivList = document.querySelectorAll('section.container');
     sectionDivList.forEach(section=>{
         section.style.maxWidth = widthWrapper;
         section.classList.add('mx-auto');
