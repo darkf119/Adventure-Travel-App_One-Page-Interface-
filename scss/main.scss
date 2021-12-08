@@ -87,8 +87,7 @@ header {
         background-color: $light_bg;
         height: 100px;
         padding-bottom: 25px !important;
-        
-        max-width: $theme_width;
+        width: $theme_width !important;
         display: flex;
         align-items: flex-end;
         position: relative;

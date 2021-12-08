@@ -47,9 +47,9 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
-        <header>
+        <header class="d-flex justify-content-center">
           <nav class="navbar navbar-expand-lg">
-            <div class="container">
+            <div class="container-fluid">
               <a href="index.html" class="logo-container"><img src="img/Logo.svg" alt="Logo" class="logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#globalNavbar" aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -121,7 +121,7 @@
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-flights" role="tabpanel" aria-labelledby="nav-flights-tab">
-                  <form action="#" class="d-flex flex-column align-items-end">
+                  <form action="#" class="d-flex flex-column align-items-end needs-validation" novalidate>
                     <div class="form-item">
                       <div class="btn-group" role="group" aria-label="select-ticket-type">
 
@@ -134,27 +134,29 @@
                       </div>
                     </div>
                     <div class="form-item select-departure">
-                      <input type="text" class="form-control" id="departureAirport" placeholder="From">
+                      <input type="text" class="form-control" id="departureAirport" placeholder="From" required>
+                      <div class="invalid-feedback">
+                        Please enter the departure airport
+                      </div>
                     </div>
                     <div class="form-item select-destination">
-                      <input type="text" class="form-control" id="destinationAirport" placeholder="To">
+                      <input type="text" class="form-control" id="destinationAirport" placeholder="To" required>
+                      <div class="invalid-feedback">
+                        Please enter the destination airport
+                      </div>
                     </div>
                     <div class="form-item select-date-range">
-                      <input type="text" class="form-control" id="selectDateRange" name="selectDateRange" placeholder="Departure date">
+                      <input type="text" class="form-control" id="selectDateRange" name="selectDateRange" placeholder="Departure date" required>
+                      <div class="invalid-feedback">
+                        Please enter values for the date range
+                      </div>
                     </div>
                     <div class="form-item ticket-options d-flex justify-content-between">
                       <div class="select-passengers">
                         <label for="selectPassengers" class="form-label">Passengers</label>
-                        <!-- <select id="selectPassengers" class="form-select">
-                          <option>1 passenger</option>
-                          <option>2 passenger</option>
-                          <option>3 passenger</option>
-                          <option>4 passenger</option>
-                          <option>5 passenger</option>
-                        </select> -->
 
                         <div class="dropdown form-control">
-                          <a class="nav-link dropdown-toggle" href="#" id="dropdownPassenger" data-bs-toggle="dropdown" aria-expanded="false" data-content="0">0 Passenger</a>
+                          <a class="nav-link dropdown-toggle" href="#" id="dropdownPassenger" data-bs-toggle="dropdown" aria-expanded="false" data-content="0" required>0 Passenger</a>
                           <ul class="dropdown-menu" aria-labelledby="dropdownPassenger">
                             <li>
                               <div class="stepper-input d-flex justify-content-center">
@@ -186,15 +188,20 @@
                             </li>
                           </ul>
                         </div>
-
+                        <div class="invalid-feedback">
+                          Please select an option
+                        </div>
                       </div>
                       <div class="select-class">
                         <label for="selectClass" class="form-label">Class</label>
-                        <select id="selectClass" class="form-select">
+                        <select id="selectClass" class="form-select" required>
                           <option>Economic</option>
                           <option>Business</option>
                           <option>First Class</option>
                         </select>
+                        <div class="invalid-feedback">
+                          Please select an option
+                        </div>
                       </div>
                     </div>
                     <button type="submit" class="btn form-item">SEARCH FLIGHTS</button>
@@ -205,7 +212,7 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="nav-hotels" role="tabpanel" aria-labelledby="nav-hotels-tab">
-                  <form action="#" class="d-flex flex-column">
+                  <form action="#" class="d-flex flex-column needs-validation" novalidate>
                     <div class="form-item select-city">
                       <input type="text" class="form-control" id="destinationCity" placeholder="City">
                     </div>
@@ -286,7 +293,7 @@
             <div class="container row d-flex align-items-center mx-auto">
               <img src="img/icons/plane_subscribe.svg" alt="subscribe to mailing list" class="col-6 p-0">
               
-              <form action="#" class="col-6 p-0">
+              <form action="#" class="needs-validation col-6 p-0" novalidate>
                 <label for="subscribeToMailingList" class="form-label">Subscribe to get the latest deals</label>
                 <div class="mb-3 d-flex">
                   <input type="text" class="form-control" id="subscribeToMailingList" placeholder="Enter Your Email">
