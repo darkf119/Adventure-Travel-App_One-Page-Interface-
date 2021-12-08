@@ -294,9 +294,12 @@ function changeCurrency(){
     var currencyList = document.querySelectorAll('[aria-labelledby="dropdownCurrency"] .dropdown-item');
     currencyList.forEach(currency=>{
         currency.addEventListener('click', function(){
-            var replacedCurrency = currCurrency.getAttribute('data-content').toUpperCase();
-            currCurrency.innerHTML = currency.getAttribute('data-content').toUpperCase();
-            currency.innerHTML = replacedCurrency;
+            var replacedCurrency = currCurrency.getAttribute('data-content');
+            console.log(replacedCurrency);
+            currCurrency.setAttribute('data-content', currency.getAttribute('data-content'));
+            currCurrency.innerHTML = currCurrency.getAttribute('data-content').toUpperCase();
+            currency.setAttribute('data-content', replacedCurrency);
+            currency.innerHTML = replacedCurrency.toUpperCase();
         });
     });
 }
@@ -458,7 +461,7 @@ function enableDraggableCarousel(){
 // Dropdown arrow flip event listener
 function dropdownArrowFlip(){
     document.querySelectorAll('.dropdown-toggle').forEach(dropdownBtn =>{
-        console.log(dropdownBtn);
+        //console.log(dropdownBtn);
         dropdownBtn.addEventListener('click', () => {
             if(dropdownBtn.classList.contains('active')){
                 dropdownBtn.classList.remove('active');
