@@ -213,7 +213,7 @@ header {
                 color: #3E6E9C;
                 background-color: $lightblue_bg;
                 border-radius: 0px;
-                width: 353px+30px+16px;
+                width: 800px !important;
                 height: 60px;
                 display: flex;
                 justify-content: flex-start;
@@ -223,14 +223,13 @@ header {
                 font-weight: 700;
                 font-size: 14px;
                 left: -30px;
-                right: -400px;
                 &:hover{
                     color: $primary_white;
                 }
             }
             span{
                 display: inline-block;
-                @include screen_btw(0px, 724px){
+                @include screen_btw(0px, 992px){
                     margin-left: 20px;
                 }
                 margin-left: auto;

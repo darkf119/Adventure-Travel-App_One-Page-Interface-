@@ -363,7 +363,7 @@ header nav.navbar .login-btn {
     color: #3E6E9C;
     background-color: #cdeefc;
     border-radius: 0px;
-    width: 399px;
+    width: 800px !important;
     height: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -379,7 +379,6 @@ header nav.navbar .login-btn {
     font-weight: 700;
     font-size: 14px;
     left: -30px;
-    right: -400px;
   }
   header nav.navbar .login-btn:hover {
     color: #fff;
@@ -392,7 +391,7 @@ header nav.navbar .login-btn span {
   margin-right: auto;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 724px) {
+@media only screen and (min-width: 0px) and (max-width: 992px) {
   header nav.navbar .login-btn span {
     margin-left: 20px;
   }
