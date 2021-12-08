@@ -153,15 +153,26 @@ header nav.navbar {
   position: relative;
 }
 
+header nav.navbar .container-fluid {
+  padding: 0px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1332px) {
+  header nav.navbar .container-fluid {
+    padding: 0 30px;
+  }
+}
+
 header nav.navbar .logo-container .logo {
+  margin-top: 33px;
   height: 46px;
   width: auto;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 724px) {
+@media only screen and (min-width: 0px) and (max-width: 992px) {
   header nav.navbar .logo-container .logo {
     height: 34px;
-    margin-bottom: 2px;
+    margin-top: 0px !important;
   }
 }
 
@@ -262,6 +273,12 @@ header nav.navbar .nav-item {
 
 header nav.navbar .nav-item:not(:last-child) {
   margin-right: 38px;
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  header nav.navbar .nav-item:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 header nav.navbar .nav-item.dropdown {
@@ -1258,6 +1275,10 @@ main {
   height: 100%;
   padding: 15px 12px;
   border-radius: 7px !important;
+}
+
+.popular-cities .card .img-container {
+  height: 292px;
 }
 
 .popular-cities .card .card-body {
